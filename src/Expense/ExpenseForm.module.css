@@ -1,0 +1,24 @@
+.ExpenseHeading{
+    width: 90%;
+    height: 100%;
+    padding: 5%;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+.ExpenseHeading label{
+     color: black;
+     font-size: 2.5rem;
+
+}
+
+.ExpenseHeading input:hover{ 
+    background-color: black;
+}
+.ExpenseHeading button{
+    color: rgb(246, 246, 246);
+    font-size: medium;
+    align-items: center;
+    text-align: center;
+    width: 45%;
+     margin-top: 5%;
+}

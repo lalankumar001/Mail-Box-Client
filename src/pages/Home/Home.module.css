@@ -1,0 +1,17 @@
+.Header{
+    width: 100%;
+    height: 100%;
+}
+.Header h1{
+  font-size: 2.6rem;
+  font-family: 'Labrada', serif;
+  padding-top: 20%;
+  margin-left: 20%;
+
+}
+.Header h2{
+    font-weight: 500;
+    padding: 2%;
+    margin-left: 27%;
+     
+}

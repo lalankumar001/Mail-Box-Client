@@ -1,0 +1,20 @@
+.buttonTogler{
+width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+font-family: 'EB Garamond', serif;
+font-weight: 700;
+font-size:2rem;
+padding: 15px;
+box-sizing: border-box;
+border-radius: 50px;
+}
+.buttonTogler:hover{
+    background-color: black;
+    color: royalblue;
+}
+.ExpenseHeading{
+    font-family: 'EB Garamond', serif;
+    font-family: 'Labrada', serif;
+    font-weight: 600;
+}

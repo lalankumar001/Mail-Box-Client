@@ -1,0 +1,13 @@
+.footerPage{
+    background-color:#56ccf2 ;
+    height: 20vh;
+    width: 100%;
+    font-family: 'Labrada', serif;
+}
+.footerPage h1{
+    color:white;
+    font-size:4em;
+    font-weight:900;
+    margin-left: 5%;
+    margin-top: -4%;
+}
