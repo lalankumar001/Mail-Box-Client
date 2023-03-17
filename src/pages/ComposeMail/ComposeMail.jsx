@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./ComposeMail.css";
 
-
 const ComposeMail = () => {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
   const userEmail = useSelector((state) => state.auth.email);
 
   let name, value;
@@ -24,7 +24,7 @@ const ComposeMail = () => {
     const { name, email, message } = userData;
     if (name && email && message) {
       const res = fetch(
-        `https://clientmailbox-87dff-default-rtdb.firebaseio.com/${userEmail}.json`,
+        `https://clientmailbox-87dff-default-rtdb.firebaseio.com/${userEmail}/sentMail.json`,
         {
           method: "POST",
           Headers: {
@@ -50,6 +50,22 @@ const ComposeMail = () => {
     } else {
       alert("Please fill the data");
     }
+
+    const formattedEmail = email.replace("@", "").replace(".", "");
+    fetch(
+      `https://clientmailbox-87dff-default-rtdb.firebaseio.com/${formattedEmail}/inboxMail.json`,
+      {
+        method: "POST",
+        Headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      }
+    );
   };
 
   return (
@@ -72,7 +88,7 @@ const ComposeMail = () => {
             id="text"
             name="name"
             required=""
-            placeholder='Subject'
+            placeholder="Subject"
             value={userData.name}
             onChange={postUserdata}
           />
