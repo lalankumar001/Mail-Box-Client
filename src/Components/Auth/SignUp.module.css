@@ -1,7 +1,8 @@
 .SignupPage{
 width:100%;
-height: 91.3vh;
+height: 100vh;
 background-image: url('../../assets//BlackPanther.jpg');
+
 }
 .container h2{
     font-family: 'Tilt Warp', cursive;

@@ -1,14 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Login from "./Components/Auth/Login";
 import SignUp from "./Components/Auth/SignUp";
-import UpdateUser from "./Components/Auth/UpdateUser";
 import Navbar from "./Components/Navbar/Navbar";
-import About from "./pages/About/About";
-import ContactUs from "./pages/Contact/ContactUs";
-import Expense from "./pages/Expense";
+import ComposeMail from "./pages/ComposeMail/ComposeMail";
+import Mail from './pages/Mail'
 import Home from "./pages/Home/Home";
+import SentMail from "./pages/SentMail";
+import Inbox from "./pages/Inbox";
+import UpdateUser from "./Components/Auth/UpdateUser";
+import "./App.css";
+import HomeNav from "./Components/Navbar/HomeNav";
 
 function App() {
 
@@ -16,14 +18,15 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<HomeNav />} />
+        <Route exact path="/Home" element={<Home />} />
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/SignUp" element={<SignUp />} />
-        <Route exact path="/Home" element={<Home />} />
-        <Route exact path="/Expenses" element={<Expense />} />
         <Route exact path="/Home/UpdateUser" element={<UpdateUser />} />
-        <Route exact path="/About" element={<About />} />
-        <Route exact path="/Contact" element={<ContactUs />} />
+        <Route exact path="/Mail" element={<Mail />} />
+        <Route exact path="/SentMail" element={<SentMail />} />
+        <Route exact path="/Inbox" element={<Inbox />} />
+        <Route exact path="/ComposeMail" element={<ComposeMail />} />
       </Routes>
     </div>
   );

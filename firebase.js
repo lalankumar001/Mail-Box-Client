@@ -1,16 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD9cpzH-OMZWpbP4s1h7R4faF7FsOC5K2w",
-  authDomain: "expensetracker-30ad5.firebaseapp.com",
-  databaseURL: "https://expensetracker-30ad5-default-rtdb.firebaseio.com",
-  projectId: "expensetracker-30ad5",
-  storageBucket: "expensetracker-30ad5.appspot.com",
-  messagingSenderId: "640540006906",
-  appId: "1:640540006906:web:f50be72edce8a21ffc6c43"
+  apiKey: "AIzaSyBDIEbP1BghSFf7Yl2Gx9HM2uAvUVTdGLQ",
+  authDomain: "clientmailbox-87dff.firebaseapp.com",
+  projectId: "clientmailbox-87dff",
+  storageBucket: "clientmailbox-87dff.appspot.com",
+  messagingSenderId: "905500628180",
+  appId: "1:905500628180:web:6e0e3680c0815f7f94d741"  
 };
 
 // Initialize Firebase
@@ -19,3 +19,5 @@ const firebaseConfig = {
 // Initialize Firebase Authentication and get a reference to the service
  const auth = getAuth(app);
 export {auth};
+const storage = getStorage(app);
+export {storage};

@@ -1,21 +1,7 @@
 
-.ContactHeader h1{
-  font-family: 'Pacifico', cursive;
-  font-size: 60px;
-}
-.ContactHeader img{
-  margin-top: 0.2%;
-}
-.ContactHeader h2{
-  font-family: 'Pacifico', cursive;
-  margin-left: 43%;
-  position: relative;
-  margin-bottom: 9px;
-  font-size: 30px;
-}
 .contact-form {
-  background: rgb(105, 122, 167);
-background: linear-gradient(90deg, rgb(95, 106, 136) 51%, rgba(110,140,146,1) 97%);
+background: rgb(105, 122, 167);
+background: linear-gradient(90deg, rgb(88, 89, 94) 51%, rgb(28, 28, 29) 97%);
   padding: 20px;
   border-radius: 10px;
   width: 90%;
@@ -24,12 +10,12 @@ background: linear-gradient(90deg, rgb(95, 106, 136) 51%, rgba(110,140,146,1) 97
 
 .contact-form label {
   color: black;
+  font-size: 20px;
 }
 
 .contact-form .heading {
   font-size: 24px;
   color: black;
-  ;
   margin-bottom: 12px;
   font-weight: bold;
   display: block;
@@ -46,8 +32,8 @@ background: linear-gradient(90deg, rgb(95, 106, 136) 51%, rgba(110,140,146,1) 97
 
 textarea {
   resize: none;
-  height: 20%;
-  width: 60%;
+  height: 25vh;
+  width: 85%;
   font-family: 'Pacifico', cursive;
 }
 
@@ -68,10 +54,10 @@ textarea {
 }
 
 .contact-form button[type="submit"] {
-  background-color: #e21a45;
+  background-color:black;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px 20px;
   width: 50%;
   margin-left: 30%;

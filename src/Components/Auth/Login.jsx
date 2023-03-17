@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import {sendPasswordResetEmail,signInWithEmailAndPassword,} from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase";
 import { useDispatch } from "react-redux";
@@ -27,7 +24,7 @@ const Login = () => {
 
         console.log(userEmail);
 
-        navigate("/Expenses");
+        navigate("/Inbox");
         dispatch(authActions.login(userEmail));
         alert("logged in successfully" + user.email);
       })
@@ -40,7 +37,7 @@ const Login = () => {
 
   return (
     <div className={styles.LoginPageBack}>
-      <h5>Sign in to your Expense Manager</h5>
+      <h5>Sign in to your Mail Box</h5>
       <div className="container">
         <form>
           <div className="form-group">

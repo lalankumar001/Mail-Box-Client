@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "./ContactUs.css";
-import img from "../../assets/queryLogo.png";
+import { useSelector } from "react-redux";
+import "./ComposeMail.css";
 
-const ContactUs = () => {
+
+const ComposeMail = () => {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
-    phone: "",
     message: "",
   });
+  const userEmail = useSelector((state) => state.auth.email);
 
   let name, value;
   const postUserdata = (event) => {
@@ -20,10 +21,10 @@ const ContactUs = () => {
   // connect with firebase
   const submitdata = (event) => {
     event.preventDefault();
-    const { name, email, phone, message } = userData;
-    if (name && email && phone && message) {
+    const { name, email, message } = userData;
+    if (name && email && message) {
       const res = fetch(
-        "https://expensetracker-30ad5-default-rtdb.firebaseio.com/.json",
+        `https://clientmailbox-87dff-default-rtdb.firebaseio.com/${userEmail}.json`,
         {
           method: "POST",
           Headers: {
@@ -32,7 +33,6 @@ const ContactUs = () => {
           body: JSON.stringify({
             name,
             email,
-            phone,
             message,
           }),
         }
@@ -42,7 +42,6 @@ const ContactUs = () => {
         setUserData({
           name: "",
           email: "",
-          phone: "",
           message: "",
         });
       } else {
@@ -55,44 +54,26 @@ const ContactUs = () => {
 
   return (
     <div className="ContactHeader">
-      <div className="container">
-        <h1>
-          Have Any Query <img src={img} alt="" width="100" />
-        </h1>
-        <h2>"We're just a click away. Get in touch with us now." </h2>
-      </div>
-
       <div className="contact-form">
-        <span className="heading">Contact Us</span>
         <form>
-          <label>Name:</label>
-          <input
-            type="text"
-            id="text"
-            name="name"
-            required=""
-            placeholder="Name"
-            value={userData.name}
-            onChange={postUserdata}
-          />
-          <label>Email:</label>
+          <label>Recipient</label>
           <input
             type="email"
             id="email"
             name="email"
             required=""
-            placeholder="@"
+            placeholder="To"
             value={userData.email}
             onChange={postUserdata}
           />
-          <label>Phone No:</label>
+          <label>Subject</label>
           <input
-            type="number"
-            id="number"
-            name="phone"
+            type="text"
+            id="text"
+            name="name"
             required=""
-            placeholder="Phone No.."
-            value={userData.phone}
+            placeholder='Subject'
+            value={userData.name}
             onChange={postUserdata}
           />
           <label>Message:</label>
@@ -114,4 +95,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ComposeMail;
